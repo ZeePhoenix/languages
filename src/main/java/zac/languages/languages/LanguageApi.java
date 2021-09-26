@@ -22,7 +22,7 @@ public class LanguageApi {
     }
 
     @RequestMapping(value="/api/languages", method = RequestMethod.POST)
-    public Language create(@RequestParam(value="name")String name, @RequestParam(value="creator")String creator, @RequestParam(value="version")Long version){
+    public Language create(@RequestParam(value="name")String name, @RequestParam(value="creator")String creator, @RequestParam(value="version")String version){
         Language lang = new Language(name, creator, version);
         return langService.createLanguage(lang);
     }

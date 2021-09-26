@@ -26,7 +26,7 @@ public class Language {
 	@Size(min = 2, max = 20)
 	private String creator;
 	@NotNull
-	private Long version;
+	private String version;
 	@Column(updatable=false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date createdAt;
@@ -36,17 +36,17 @@ public class Language {
 	public Language(){
 
 	}
-	public Language(String name, String creator, Long version){
+	public Language(String name, String creator, String version){
 		this.name = name;
 		this.creator = creator;
 		this.version = version;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return this.id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -66,11 +66,11 @@ public class Language {
 		this.creator = creator;
 	}
 
-	public float getVersion() {
+	public String getVersion() {
 		return this.version;
 	}
 
-	public void setVersion(Long version) {
+	public void setVersion(String version) {
 		this.version = version;
 	}
 
