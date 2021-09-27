@@ -29,4 +29,20 @@ public class LanguageService{
             return null;
         }
     }
+
+    public Language updateLanguage(Language lang){
+        return updateLanguage(lang.getId(), lang.getName(), lang.getCreator(), lang.getVersion());
+    }
+
+    public Language updateLanguage(Long id, String name, String creator, String version) {
+        Optional<Language> lang = langRepo.findById(id);
+        if (lang.isPresent()){
+            lang.get().setName(name);
+            lang.get().setCreator(creator);
+            lang.get().setVersion(version);
+            return langRepo.save(lang.get());
+        } else {
+            return null;
+        }
+    }
 }

@@ -32,4 +32,10 @@ public class LanguageApi {
         Language lang = langService.findLanguage(id);
         return lang;
     }
+
+    @RequestMapping(value="/api/languages/{id}/edit", method=RequestMethod.PUT)
+    public Language update(@PathVariable("id") Long id, @RequestParam("name") String name, @RequestParam(value="creator")String creator, @RequestParam(value="version")String version){
+        Language lang = langService.updateLanguage(id, name, creator, version);
+        return lang;
+    }
 }

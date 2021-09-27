@@ -25,12 +25,12 @@
                 <td><c:out value="${lang.name}"/></td>
                 <td><c:out value="${lang.creator}"/></td>
                 <td><c:out value="${lang.version}"/></td>
-                <td><a>Edit</a><a>Delete</a></td>
+                <td><a href="/languages/${lang.id}/edit">Edit</a> <a href="">Delete</a></td>
             </tr>
             </c:forEach>
         </tbody>
     </table>
-    <form action="/languages" method="POST">
+    <form action="languages" method="POST">
         <label for="name">Name:</label>
         <input type="text" name="name" id="name"><br>
         <label for="creator">Creator:</label>
